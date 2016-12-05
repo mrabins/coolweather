@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		133FD80E1DF616B000C9BAE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133FD80D1DF616B000C9BAE1 /* AppDelegate.swift */; };
-		133FD8101DF616B000C9BAE1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133FD80F1DF616B000C9BAE1 /* ViewController.swift */; };
+		133FD8101DF616B000C9BAE1 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133FD80F1DF616B000C9BAE1 /* WeatherViewController.swift */; };
 		133FD8131DF616B000C9BAE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 133FD8111DF616B000C9BAE1 /* Main.storyboard */; };
 		133FD8161DF616B000C9BAE1 /* CoolWeather.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 133FD8141DF616B000C9BAE1 /* CoolWeather.xcdatamodeld */; };
 		133FD8181DF616B000C9BAE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 133FD8171DF616B000C9BAE1 /* Assets.xcassets */; };
@@ -19,7 +19,7 @@
 /* Begin PBXFileReference section */
 		133FD80A1DF616B000C9BAE1 /* CoolWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoolWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		133FD80D1DF616B000C9BAE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		133FD80F1DF616B000C9BAE1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		133FD80F1DF616B000C9BAE1 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		133FD8121DF616B000C9BAE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		133FD8151DF616B000C9BAE1 /* CoolWeather.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoolWeather.xcdatamodel; sourceTree = "<group>"; };
 		133FD8171DF616B000C9BAE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -64,7 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				133FD80D1DF616B000C9BAE1 /* AppDelegate.swift */,
-				133FD80F1DF616B000C9BAE1 /* ViewController.swift */,
+				133FD80F1DF616B000C9BAE1 /* WeatherViewController.swift */,
 				133FD8111DF616B000C9BAE1 /* Main.storyboard */,
 				133FD8171DF616B000C9BAE1 /* Assets.xcassets */,
 				133FD8191DF616B000C9BAE1 /* LaunchScreen.storyboard */,
@@ -217,7 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				133FD8161DF616B000C9BAE1 /* CoolWeather.xcdatamodeld in Sources */,
-				133FD8101DF616B000C9BAE1 /* ViewController.swift in Sources */,
+				133FD8101DF616B000C9BAE1 /* WeatherViewController.swift in Sources */,
 				133FD80E1DF616B000C9BAE1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
