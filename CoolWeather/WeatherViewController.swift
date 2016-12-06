@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class WeatherViewController: UIViewController
 {
@@ -18,6 +19,8 @@ class WeatherViewController: UIViewController
     @IBOutlet weak var tableView: UITableView!
     
     var currentWeather: CurrentWeather!
+    var forecast: Forecast!
+    var forecasts = [Forecast]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,13 +30,37 @@ class WeatherViewController: UIViewController
         
         currentWeather = CurrentWeather()
         currentWeather.downloadWeatherDetails {
-            self.updateMainUI()
+            self.downloadForecastData {
+                self.updateMainUI()
+
+            }
         }
-        
-
-        
     }
-
+    
+    func downloadForecastData(completed: @escaping DownloadComplete) {
+        //Downloading the forecast data for tableview
+        
+        let forecastURL = URL(string: FORECAST_URL)
+        Alamofire.request(forecastURL!).responseJSON { response in
+            let result = response.result
+            
+            if let dict = result.value as? Dictionary<String, AnyObject> {
+                if let list = dict["list"] as? [Dictionary<String, AnyObject>] {
+                    
+                    for obj in list {
+                        let forecast = Forecast(weatherDict: obj)
+                        self.forecasts.append(forecast)
+                        print(obj)
+                        
+                    }
+                    
+                }
+                
+            }
+            completed()
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -51,8 +78,8 @@ class WeatherViewController: UIViewController
         locationLabel.text = currentWeather.cityName
         currentWeatherImage.image = UIImage(named: currentWeather.weatherType)
     }
-
-
+    
+    
 }
 
 // Extension for Delegates and DataSources
@@ -69,7 +96,7 @@ extension WeatherViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "weatherCell", for: indexPath)
         return cell
-
+        
     }
     
     
