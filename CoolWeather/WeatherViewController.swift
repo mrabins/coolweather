@@ -17,11 +17,13 @@ class WeatherViewController: UIViewController
     @IBOutlet weak var currentWeatherTypeLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        print(CURRENT_WEATHER_URL)
 
     }
 
@@ -34,7 +36,28 @@ class WeatherViewController: UIViewController
 }
 
 // Extension for Delegates and DataSources
+extension WeatherViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 6
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "weatherCell", for: indexPath)
+        
+        
+        return cell
+        
+        
 
-extension WeatherViewController: UITabBarDelegate, UITableViewDataSource {
+    }
+    
+    
+    
     
 }
