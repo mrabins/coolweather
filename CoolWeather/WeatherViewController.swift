@@ -32,7 +32,6 @@ class WeatherViewController: UIViewController
         currentWeather.downloadWeatherDetails {
             self.downloadForecastData {
                 self.updateMainUI()
-
             }
         }
     }
@@ -53,6 +52,8 @@ class WeatherViewController: UIViewController
                         print(obj)
                         
                     }
+                    self.forecasts.removeFirst(2)
+                    self.tableView.reloadData()
                     
                 }
                 
@@ -90,16 +91,17 @@ extension WeatherViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return forecasts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "weatherCell", for: indexPath)
-        return cell
-        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "weatherCell", for: indexPath) as? WeatherCell {
+            let forecast = forecasts[indexPath.row]
+            cell.configureCell(forecast: forecast)
+            return cell
+        } else {
+            return WeatherCell()
+        }
     }
-    
-    
-    
     
 }
