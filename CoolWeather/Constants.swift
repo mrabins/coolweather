@@ -16,6 +16,7 @@ import Foundation
     
     let CURRENT_WEATHER_URL = "\(BASE_URL)\(LATITUDE)-36\(LONGITUDE)123\(APP_ID)\(API_KEY)"
 
+    typealias DownloadComplete = () -> ()
 
 
 
