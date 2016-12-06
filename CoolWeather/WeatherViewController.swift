@@ -11,7 +11,7 @@ import UIKit
 class WeatherViewController: UIViewController
 {
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var tempertureLabel: UILabel!
+    @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var currentWeatherImage: UIImageView!
     @IBOutlet weak var currentWeatherTypeLabel: UILabel!
@@ -27,7 +27,7 @@ class WeatherViewController: UIViewController
         
         currentWeather = CurrentWeather()
         currentWeather.downloadWeatherDetails {
-//            self.updateMainUI()
+            self.updateMainUI()
         }
         
 
@@ -40,19 +40,28 @@ class WeatherViewController: UIViewController
     }
     
     func updateMainUI() {
-        dateLabel.text = currentWeather.date
-        print("I am the \(dateLabel.text)")
+//        dateLabel.text = currentWeather.date
+//        print("I am the \(currentWeather.date)")
+//        temperatureLabel.text = "\(currentWeather.currentTemp)"
+//        print("Current temp is \(currentWeather.currentTemp)")
+//        currentWeatherTypeLabel.text = currentWeather.weatherType
+//        print("I am the current weather \(currentWeather.weatherType)")
+//        locationLabel.text = currentWeather.cityName
+//        print("I am the current location \(currentWeather.cityName)")
+//        currentWeatherImage.image = UIImage(named: currentWeather.weatherType)
+//        print("I am the current title of \(currentWeather.weatherType)")
         
-        tempertureLabel.text = "\(currentWeather.currentTemp)"
-        print("\(currentWeather.currentTemp)")
+        dateLabel.text = currentWeather.date
+        
+        print("I am currentWeather.date \(currentWeather.date)")
+        
+        temperatureLabel.text = "\(currentWeather.currentTemp)"
+        
+        print("mememe \(currentWeather.currentTemp)")
         currentWeatherTypeLabel.text = currentWeather.weatherType
-        print("\(currentWeather.weatherType)")
+        print("I am the type \(currentWeather.weatherType) ")
         locationLabel.text = currentWeather.cityName
-        print("\(currentWeather.cityName)")
-
         currentWeatherImage.image = UIImage(named: currentWeather.weatherType)
-        print("\(currentWeather.weatherType)")
-
     }
 
 

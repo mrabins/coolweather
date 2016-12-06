@@ -170,7 +170,7 @@
                         <outlet property="dateLabel" destination="JJF-Cl-wTO" id="VMo-tf-6FQ"/>
                         <outlet property="locationLabel" destination="6FK-3d-NQj" id="bZ1-2j-9SZ"/>
                         <outlet property="tableView" destination="X1W-YP-c2m" id="nTR-GC-43m"/>
-                        <outlet property="tempertureLabel" destination="9i8-ZD-EB1" id="YGK-8g-aMW"/>
+                        <outlet property="temperatureLabel" destination="9i8-ZD-EB1" id="PoV-dn-FSj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
