@@ -40,26 +40,14 @@ class WeatherViewController: UIViewController
     }
     
     func updateMainUI() {
-//        dateLabel.text = currentWeather.date
-//        print("I am the \(currentWeather.date)")
-//        temperatureLabel.text = "\(currentWeather.currentTemp)"
-//        print("Current temp is \(currentWeather.currentTemp)")
-//        currentWeatherTypeLabel.text = currentWeather.weatherType
-//        print("I am the current weather \(currentWeather.weatherType)")
-//        locationLabel.text = currentWeather.cityName
-//        print("I am the current location \(currentWeather.cityName)")
-//        currentWeatherImage.image = UIImage(named: currentWeather.weatherType)
-//        print("I am the current title of \(currentWeather.weatherType)")
-        
         dateLabel.text = currentWeather.date
-        
-        print("I am currentWeather.date \(currentWeather.date)")
-        
         temperatureLabel.text = "\(currentWeather.currentTemp)"
-        
-        print("mememe \(currentWeather.currentTemp)")
         currentWeatherTypeLabel.text = currentWeather.weatherType
-        print("I am the type \(currentWeather.weatherType) ")
+        locationLabel.text = currentWeather.cityName
+        currentWeatherImage.image = UIImage(named: currentWeather.weatherType)
+        dateLabel.text = currentWeather.date
+        temperatureLabel.text = "\(currentWeather.currentTemp)"
+        currentWeatherTypeLabel.text = currentWeather.weatherType
         locationLabel.text = currentWeather.cityName
         currentWeatherImage.image = UIImage(named: currentWeather.weatherType)
     }
@@ -75,7 +63,7 @@ extension WeatherViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
